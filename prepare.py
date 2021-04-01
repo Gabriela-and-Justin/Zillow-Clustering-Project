@@ -14,6 +14,25 @@ def get_zillow(sql):
     zillow_df = pd.read_sql(sql, url, index_col='id')
     return zillow_df
 
+def get_latitude(df):
+    '''
+    This function takes in a datafame with latitude formatted as a float,
+    converts it to a int and utilizes lambda to return the latitude values
+    in a correct format.
+    '''
+    df.latitude = df.latitude.astype(int)
+    df['latitude'] = df['latitude'].apply(lambda x: x / 10 ** (len((str(x))) - 2))
+    return df
+
+def get_longitude(df):
+    '''This function takes in a datafame with longitude formatted as a float,
+    converts it to a int and utilizes lambda to return the longitude values
+    in the correct format.
+    '''
+    df.longitude = df.longitude.astype(int)
+    df['longitude'] = df['longitude'].apply(lambda x: x / 10 ** (len((str(x))) - 4))
+    return df
+
 
 def handle_missing_values(df, prop_required_column = .5, prop_required_row = .70):
 	#function that will drop rows or columns based on the percent of values that are missing:\
@@ -65,7 +84,20 @@ def wrangle_zillow():
     df.lotsizesquarefeet.fillna(7313, inplace = True)
     df.buildingqualitytypeid.fillna(6.0, inplace = True)
     
+    # format latitude correctly using get_latitude fx
+    df = get_latitude(df)
+
+    # format longitude correctly using get_longitudefx
+    df = get_longitude(df)
+
+    #Separate logerror into quantiles
+    df['logerror_class'] = pd.qcut(df.logerror, q=4, labels=['q1', 'q2', 'q3', 'q4'])
+
     # Just to be sure we caught all nulls, drop them here
     df = df.dropna()
     
+    # Reset indext to parcel_id
+    df.set_index('parcelid', inplace=True)
+
+    df.drop(columns={'Unnamed: 0'}, inplace=True)
     return df
