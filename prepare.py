@@ -1,3 +1,14 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import env
+
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+
 def get_zillow(sql):
     url = get_db_url('zillow')
     zillow_df = pd.read_sql(sql, url, index_col='id')
