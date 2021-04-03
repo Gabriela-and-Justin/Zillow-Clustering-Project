@@ -24,7 +24,7 @@ def get_county_dummies(df):
 
     return df
 
-def get_counties():
+def get_counties(df):
     '''
     This function will create dummy variables out of the original fips column. 
     And return a dataframe with all of the original columns except regionidcounty.
