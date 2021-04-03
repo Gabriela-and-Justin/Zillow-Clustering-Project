@@ -9,11 +9,6 @@ import env
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-def get_zillow(sql):
-    url = get_db_url('zillow')
-    zillow_df = pd.read_sql(sql, url, index_col='id')
-    return zillow_df
-
 def get_latitude(df):
     '''
     This function takes in a datafame with latitude formatted as a float,
