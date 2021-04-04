@@ -179,6 +179,9 @@ def wrangle_zillow_2nd():
     # Get Dummies for Counties
     df = get_counties(df)
 
+    #Replace 10 obersvartions with error in zipcode with corresonding zipcode
+    df.regionidzip.replace({399675: 91010}, inplace=True)
+
     # Reset indext to parcel_id
     df.set_index('parcelid', inplace=True)
     
