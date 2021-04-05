@@ -38,6 +38,11 @@ def outlier_label(x, lower, upper):
         return 'No'
 
 def outlier_report(df):
+    '''
+    This function takes in a data frame and returns
+    print statments stating the upper and lower bound outliers for 
+    each column
+    '''
     df = wrangle_zillow()
     
     columns_to_check = ['bathroomcnt', 'bedroomcnt',
