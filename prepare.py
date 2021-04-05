@@ -9,6 +9,67 @@ import env
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
+def visualize_nulls(df):
+    '''
+    This function takes in a dataframe and returns
+    a horizontal bar chart where each bar is a column in the dataframe
+    and the bar represents the number of null values in that column
+    '''
+    missing_df = df.isnull().sum(axis=0).reset_index()
+    missing_df.columns = ['column_name', 'missing_count']
+    missing_df = missing_df[missing_df['missing_count']>0]
+    missing_df = missing_df.sort_values(by='missing_count')
+    
+    ind = np.arange(missing_df.shape[0])
+    width = 0.9
+    fig, ax = plt.subplots(figsize=(12,18))
+    rects = ax.barh(ind, missing_df.missing_count.values, color='purple')
+    ax.set_yticks(ind)
+    ax.set_yticklabels(missing_df.column_name.values, rotation='horizontal')
+    ax.set_xlabel("Count of missing values")
+    ax.set_title("Number of missing values in each column")
+    plt.show()
+
+def outlier_label(x, lower, upper):
+    if (lower >= x) or (x >= upper):
+        return 'Yes'
+    else:
+        
+        return 'No'
+
+def outlier_report(df):
+    df = wrangle_zillow()
+    
+    columns_to_check = ['bathroomcnt', 'bedroomcnt',
+       'calculatedfinishedsquarefeet',
+       'acres', 'rawcensustractandblock','age',
+       'structuretaxvaluedollarcnt', 'taxrate',
+       'landtaxvaluedollarcnt', 'logerror']
+    
+    for col in columns_to_check:
+        quartile_01, quartile_03 = np.percentile(df[col], [25, 75])
+        iqr = quartile_03 - quartile_01
+    
+        lower_bound = quartile_01 -(3 * iqr)
+        upper_bound = quartile_03 +(3 * iqr)
+    
+        df['outlier'] = df[col].apply(lambda x: outlier_label(x, lower_bound, upper_bound))
+    
+
+        print(f"The lower and upper bound of the range for '{col}' respectively is: {lower_bound} and {upper_bound}")
+
+def visualize_outliers(df):
+    '''
+    This function takes in a dataframe
+    and outputs boxplots to show outlier distribution
+    for each column in the the dataframe
+    '''
+    df = wrangle_zillow()
+    for col in df.columns:
+        sns.boxplot(df[col])
+        plt.title(col)
+        plt.show()
+
 def get_latitude(df):
     '''
     This function takes in a datafame with latitude formatted as a float,
