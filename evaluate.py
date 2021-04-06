@@ -7,6 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score, explained_variance_sco
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 from sklearn.feature_selection import f_regression 
+sns.diverging_palette(220, 20, as_cmap=True)
 from math import sqrt
 import math
 import matplotlib.pyplot as plt
