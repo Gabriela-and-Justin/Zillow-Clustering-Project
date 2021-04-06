@@ -15,6 +15,7 @@ warnings.filterwarnings("ignore")
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
 
 def is_outlier(x, lower, upper):
     if (lower >= x) or (x >= upper):
@@ -265,3 +266,31 @@ def plot_scatter(train, categorical_target, continuous_target, quant):
     p = plt.title(quant)
     return p
 
+def find_k(X_train, cluster_vars, k_range):
+    '''
+    This function takes in a dataframe, a list of variables to cluster by
+    and a range for choosing k. It returns a dataframe with stats to assist with
+    choosing the best k (number of clusters) for the variables.
+    '''
+    sse = []
+    for k in k_range:
+        kmeans = KMeans(n_clusters=k)
+
+        # X[0] is our X_train dataframe..the first dataframe in the list of dataframes stored in X. 
+        kmeans.fit(X_train[cluster_vars])
+
+        # inertia: Sum of squared distances of samples to their closest cluster center.
+        sse.append(kmeans.inertia_) 
+
+    # compute the difference from one k to the next
+    delta = [round(sse[i] - sse[i+1],0) for i in range(len(sse)-1)]
+
+    # compute the percent difference from one k to the next
+    pct_delta = [round(((sse[i] - sse[i+1])/sse[i])*100, 1) for i in range(len(sse)-1)]
+
+    # create a dataframe with all of our metrics to compare them across values of k: SSE, delta, pct_delta
+    k_comparisons_df = pd.DataFrame(dict(k=k_range[0:-1], 
+                             sse=sse[0:-1], 
+                             delta=delta, 
+                             pct_delta=pct_delta))
+    return k_comparisons_df
