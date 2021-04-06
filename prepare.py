@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+sns.diverging_palette(220, 20, as_cmap=True)
 
 import env
 
@@ -55,8 +56,8 @@ def outlier_report(df):
         quartile_01, quartile_03 = np.percentile(df[col], [25, 75])
         iqr = quartile_03 - quartile_01
     
-        lower_bound = quartile_01 -(3 * iqr)
-        upper_bound = quartile_03 +(3 * iqr)
+        lower_bound = round(quartile_01 -(3 * iqr), 3)
+        upper_bound = round(quartile_03 +(3 * iqr), 3)
     
         df['outlier'] = df[col].apply(lambda x: outlier_label(x, lower_bound, upper_bound))
     
@@ -163,6 +164,15 @@ def expand_transactiondate(df):
 
 
 def wrangle_zillow():
+    '''
+    This function takes in the zillow data frame and prepares it for analysis
+    by dealing with null values, formattin latitude and longitude correctly, 
+    getting dummies for counties based on fips, and removing unnecessary columns.
+    Note: This function is not used for preparing data in the majority of this project's
+    analysis. Rather, this function was used for initial exploration prior to
+    dealing with outliers and feature engineering. For the most recent wrangle
+    function, please use wrangle_zillow_2nd()
+    '''
     df = pd.read_csv('zillow.csv')
     
     # Restrict df to only properties that meet single use criteria
