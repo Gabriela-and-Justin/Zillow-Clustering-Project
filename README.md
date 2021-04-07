@@ -1,4 +1,4 @@
-# Zillow Clustering Project: 
+# Zillow Clustering Project
 by: Gabriela Tijerina and Justin Sullivan
 ****
 
@@ -16,7 +16,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 ****
 
 ### Goals:
-* Identify the drivers for errors in Zestimates by incorporating clustering methodologies
+* Identify the drivers for errors in Zestimates® by incorporating clustering methodologies
 * Develop a model that is able to predict log error for Los Angeles County, Orange County, and Ventura County
 **** 
 
@@ -57,20 +57,16 @@ The purpose of this project is to develop a model that is able to predict the lo
 ***
 
 
-## Data Science Pipeline:
-
-#### Plan
-- State project description and goals
-- Explore Zillow data using CodeUp's MySQL database 
-- Form initial hypotheses and brainstorm ideas
+### Data Science Pipeline:
 
 #### 1. Acquire
+- Connect to the SQL company database (login credentials required)
+- Summarize initial data to determine how data needs to be prepared and cleaned 
 - Define functions to:
     - Create a connection url to access the CodeUp's SQL database using personal credentials
     - Acquire Zillow data from MySQL and return as a dataframe
     - Create a .csv file of acquired data 
 - All functions to acquire data are included in [acquire.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/acquire.py)
-- Summarize initial data to determine how data needs to be prepared and cleaned 
 
 #### 2. Prepare
 - Review data and address any missing or erroneous values 
@@ -91,13 +87,13 @@ The purpose of this project is to develop a model that is able to predict the lo
 - Define functions to:
     - Split the data to explore on the training data set
     - Run univariate, bivariate, and multivariate visulaizations for how features interact with each other and the target, logerror
-    - Use clustering to further determine features driving logerror and engineer new features as discovered
+    - Use clustering to further determine features driving log error and engineer new features as discovered
 - All functions to explore the data are included in [explore.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/explore.py)
 
 #### 4. Model/Evaluate
 - Goal: develop a model that performs better than the baseline
 - Develop a baseline model and linear regression model without controlling for counties
-- Iterate Process for each of the three counties
+- Iterate process for each of the three counties
 - Evaluate if the individualized county models performed better than the all counties model
 - Summarize performance, interpret, and document results
 - Define functions to:
@@ -105,16 +101,16 @@ The purpose of this project is to develop a model that is able to predict the lo
 - All functions to evaluate models are included in [evaluate.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/evaluate.py)
 
 #### 5. Deliver
-- A final Jupyter Notebook [Final_Report_Zillow.ipynb](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the zestimate are 
+- A final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate® are 
 
-#### Conclusion:
+### Conclusion:
 - Log error is statistically greater for properties in LA County than properties in Ventura/Orange Counties.
 - Log error is statistically different for properties with >5 acres than properties with <5 acres.
 - Clustering By Acres and Living Square Footage produces 4 clusters that may help with modeling in future iterations
 - Modeling to predict logerror needs additional work and analysis. We built 4 linear regression models, all of which only did marginally better than baseline or performed slightly worse than baseline.
 - Individual models controlling for Ventura County and Los Angeles County respectively did perform better in comparison to the all county Linear Regression Model. 
 
-#### Next Steps: 
+### Next Steps: 
 - Utilize clustering observations as features for predicting log error
 - Utilize other ML algorithms that may perform better than the linear regression model
 - Tweak hyperparameters while continuing to control for county
@@ -134,4 +130,4 @@ All files are reproducible and available for download and use. You will need log
  - [evaluate.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/evaluate.py)
   
 
-3. Run our final Jupyter Notebook, [Final_Report_Zillow.ipynb](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) to reproduce our findings and analysis. 
+3. Run our final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) to reproduce our findings and analysis. 
