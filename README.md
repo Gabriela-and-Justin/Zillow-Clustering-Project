@@ -6,13 +6,16 @@ by: Gabriela Tijerina and Justin Sullivan
 The purpose of this project is to develop a model that is able to predict the log error of Zillow's Zestimate® in predicting home values in three counties in California using Zillow data on single unit/single family properties with transaction dates in 2017. 
 
 <b>What is a log error?</b> 
-- Log error is defined as ***logerror=log(Zestimate®)−log(SalePrice)***. 
+- Log error is defined as 
+
+***logerror=log(Zestimate®)−log(SalePrice)***
 
 <b>How accurate are Zillow Zestimates®?</b> 
 - According to <b>[FreeStoneProperties](https://www.freestoneproperties.com/blog/truth-zillow-zestimates/#:~:text=Is%20a%20Zillow%20Zestimate%20High,about%20the%20accuracy%20of%20Zestimates.&text=For%20example%2C%20depending%20on%20the,only%2062%25%20of%20the%20time.)</b> ,
 "The median error for larger markets is usually around 2% of the sale price of the home. But the problem with Zestimates is that when they are wrong, they can be significantly wrong. For example, depending on the metro area, Zillow might be within 5% of the sale price only 62% of the time."   
 
 **Data Source:** CodeUp MySQL Database 
+****
 
 ### Goals:
 * Identify the drivers for errors in Zestimates by incorporating clustering methodologies
