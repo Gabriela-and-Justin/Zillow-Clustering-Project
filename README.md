@@ -57,7 +57,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 ***
 
 
-## Data Science Pipeline Process:
+## Data Science Pipeline:
 
 #### Plan
 - State project description and goals
