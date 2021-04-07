@@ -14,8 +14,8 @@ The purpose of this project is to develop a model that is able to predict the lo
 
 ### Deliverables:
 * README.md file explaining what the project is, how to reproduce our work, and our notes from project planning
-* A final Jupyter Notebook (`Final_Report_Zillow.ipynb`) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the zestimate are
-* Python files that automate the data acquisition(`acquire.py`), preparation(`prepare.py`), exploration(`explore.py`), and evalutation(`evaluate.py`) process. These modules are imported and used in our final notebook. 
+* A final Jupyter Notebook [Final_Report_Zillow.ipynb](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate are
+* Python files that automate the data acquisition [acquire.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/acquire.py), preparation [prepare.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/prepare.py), exploration [explore.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/explore.py), and evaluation [evaluate.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/evaluate.py) process. These modules are imported and used in our final notebook. 
 **** 
 
 ### Data Dictionary
