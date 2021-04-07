@@ -17,7 +17,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 
 ### Goals:
 * Identify the drivers for errors in Zestimates® by incorporating clustering methodologies
-* Develop a model that is able to predict log error for Los Angeles County, Orange County, and Ventura County
+* Build a model or series of models to better predict log error for single unit properties in Southern California 
 **** 
 
 ### Deliverables:
