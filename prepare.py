@@ -291,7 +291,7 @@ def wrangle_zillow_2nd():
 
     #Drop redudnant columns after creating new features
     df = remove_columns(df, ['heatingorsystemdesc', 'transactiondate', 'month_sold',
-                            'yearbuilt', 'taxamount', 'taxvaluedollarcnt','lotsizesquarefeet', 'fips', 'roomcnt'])
+                            'yearbuilt', 'taxamount', 'taxvaluedollarcnt','lotsizesquarefeet',  'roomcnt'])
 
     #Remove Outliers
     df = remove_outliers(df)
