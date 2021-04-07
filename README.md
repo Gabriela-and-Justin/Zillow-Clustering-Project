@@ -5,8 +5,7 @@ by: Gabriela Tijerina and Justin Sullivan
 ### Project Summary:
 The purpose of this project is to develop a model that is able to predict the log error of Zillow's Zestimate in predicting home values in three counties in California using Zillow data on single unit/single family properties with transaction dates in 2017. Log error is defined as ***logerror=log(Zestimate)−log(SalePrice)***  
 
-### Data Source:
-CodeUp MySQL Database 
+**Data Source:** CodeUp MySQL Database 
 
 ### Goals:
 * Identify the drivers for errors in Zestimates by incorporating clustering methodologies
