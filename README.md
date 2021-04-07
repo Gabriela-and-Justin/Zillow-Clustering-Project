@@ -22,7 +22,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 
 ### Deliverables:
 * README.md file explaining what the project is, how to reproduce our work, and our notes from project planning
-* A final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate are
+* A final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presentation that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate are
 * Python files that automate the data acquisition [(acquire.py)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/acquire.py), preparation [(prepare.py)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/prepare.py), exploration [(explore.py)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/explore.py), and evaluation [(evaluate.py)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/evaluate.py) process. These modules are imported and used in our final notebook. 
 **** 
 
@@ -86,7 +86,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 - Summarize key findings and takeaways
 - Define functions to:
     - Split the data to explore on the training data set
-    - Run univariate, bivariate, and multivariate visulaizations for how features interact with each other and the target, logerror
+    - Run univariate, bivariate, and multivariate visualizations for how features interact with each other and the target, logerror
     - Use clustering to further determine features driving log error and engineer new features as discovered
 - All functions to explore the data are included in [explore.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/explore.py)
 
@@ -101,7 +101,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 - All functions to evaluate models are included in [evaluate.py](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/evaluate.py)
 
 #### 5. Deliver
-- A final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presention that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate® are 
+- A final Jupyter Notebook [(Final_Report_Zillow.ipynb)](https://github.com/Gabriela-and-Justin/Zillow-Clustering-Project/blob/master/Final_Report_Zillow.ipynb) for presentation that includes discoveries we made and work we have done related to uncovering what the drivers of the error in the Zestimate® are 
 
 ### Conclusion:
 - Log error is statistically greater for properties in LA County than properties in Ventura/Orange Counties.
@@ -118,7 +118,7 @@ The purpose of this project is to develop a model that is able to predict the lo
 ****
 
 ### Instructions for Reproducing Project:  
-All files are reproducible and available for download and use. You will need login credentials for access to Zillow company database.
+All files are reproducible and available for download and use. You will need login credentials for access to the Zillow company database.
 
 1.  Read and follow this README.md. 
 
